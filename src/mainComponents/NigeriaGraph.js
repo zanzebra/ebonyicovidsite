@@ -13,7 +13,7 @@ class NigeriaGraph extends React.Component {
     };
   }
   componentDidMount() {
-    axios.get("https://ebonyicovidsite.ew.r.appspot.com/month").then((res) => {
+    axios.get("https://ebonyicovidsite.ew.r.appspot.com/nigeria/month").then((res) => {
       this.setState({ data: res.data });
       let monthData = [];
       this.state.data.map((e) => {
