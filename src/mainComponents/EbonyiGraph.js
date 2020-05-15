@@ -13,18 +13,20 @@ class EbonyiGraph extends React.Component {
     };
   }
   componentDidMount() {
-    axios.get("http://127.0.0.1:8000/ebonyi/month").then((res) => {
-      this.setState({ data: res.data });
-      let monthData = [];
-      this.state.data.map((e) => {
-        monthData = monthData.concat({
-          id: e.id,
-          slug: e.slug,
-          name: e.name_of_month,
+    axios
+      .get("https://ebonyicovidsite.ew.r.appspot.com/ebonyi/month")
+      .then((res) => {
+        this.setState({ data: res.data });
+        let monthData = [];
+        this.state.data.map((e) => {
+          monthData = monthData.concat({
+            id: e.id,
+            slug: e.slug,
+            name: e.name_of_month,
+          });
         });
+        this.setState({ monthsLookup: monthData });
       });
-      this.setState({ monthsLookup: monthData });
-    });
     return this.state.monthsLookup;
   }
   createValue = (value) => {

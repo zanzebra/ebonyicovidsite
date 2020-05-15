@@ -8,10 +8,12 @@ class MessageRightBar extends Component {
     };
   }
   componentDidMount() {
-    axios.get("http://127.0.0.1:8000/contact/").then((res) => {
-      this.setState({ message: res.data });
-      console.log(res.data);
-    });
+    axios
+      .get("https://ebonyicovidsite.ew.r.appspot.com/contact/")
+      .then((res) => {
+        this.setState({ message: res.data });
+        console.log(res.data);
+      });
   }
 
   render() {

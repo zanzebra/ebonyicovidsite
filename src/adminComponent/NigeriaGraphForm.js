@@ -17,18 +17,20 @@ class NigeriaGraphForm extends Component {
     };
   }
   componentDidMount() {
-    axios.get("http://127.0.0.1:8000/nigeria/month").then((res) => {
-      this.setState({ data: res.data });
-      let monthData = [];
-      this.state.data.map((e) => {
-        monthData = monthData.concat({
-          id: e.id,
-          slug: e.slug,
-          name: e.name_of_month,
+    axios
+      .get("https://ebonyicovidsite.ew.r.appspot.com/nigeria/month")
+      .then((res) => {
+        this.setState({ data: res.data });
+        let monthData = [];
+        this.state.data.map((e) => {
+          monthData = monthData.concat({
+            id: e.id,
+            slug: e.slug,
+            name: e.name_of_month,
+          });
         });
+        this.setState({ monthsLookup: monthData });
       });
-      this.setState({ monthsLookup: monthData });
-    });
     return this.state.monthsLookup;
   }
   createValue = (value) => {
@@ -52,7 +54,7 @@ class NigeriaGraphForm extends Component {
     e.preventDefault();
     const { month, confirmedcases, recoveries, deaths } = this.state;
     axios
-      .post("http://127.0.0.1:8000/nigeria/", {
+      .post("https://ebonyicovidsite.ew.r.appspot.com/nigeria/", {
         month: month,
         confirmed_cases: confirmedcases,
         recoveries: recoveries,

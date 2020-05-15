@@ -27,7 +27,7 @@ class Form extends React.Component {
     formData.append("content", content);
     formData.append("photo", photo);
     console.log(formData);
-    fetch("http://127.0.0.1:8000/news/", {
+    fetch("https://ebonyicovidsite.ew.r.appspot.com/news/", {
       method: "POST",
       body: formData,
     })

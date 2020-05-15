@@ -18,7 +18,7 @@ class Contact extends React.Component {
     e.preventDefault();
     const { name, email, subject, message } = this.state;
     axios
-      .post("http://127.0.0.1:8000/contact/", {
+      .post("https://ebonyicovidsite.ew.r.appspot.com/contact/", {
         name: name,
         email: email,
         subject: subject,

@@ -40,7 +40,9 @@ class ChartComponent extends React.Component {
   componentDidMount() {
     if (this.props.slugValue === "") {
       axios
-        .get(`http://127.0.0.1:8000/${this.props.region}/month/january-2020`)
+        .get(
+          `https://ebonyicovidsite.ew.r.appspot.com/${this.props.region}/month/january-2020`
+        )
         .then((res) => {
           this.setState({ data: res.data });
           const data = this.state.data;
@@ -70,7 +72,7 @@ class ChartComponent extends React.Component {
   getData = () => {
     axios
       .get(
-        `http://127.0.0.1:8000/${this.props.region}/month/${this.state.selectedMonth}`
+        `https://ebonyicovidsite.ew.r.appspot.com/${this.props.region}/month/${this.state.selectedMonth}`
       )
       .then((res) => {
         this.setState({ data: res.data });

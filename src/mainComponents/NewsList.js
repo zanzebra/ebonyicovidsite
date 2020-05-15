@@ -14,7 +14,7 @@ class NewsList extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   componentDidMount() {
-    axios.get("http://127.0.0.1:8000/news/").then((res) => {
+    axios.get("https://ebonyicovidsite.ew.r.appspot.com/news/").then((res) => {
       this.setState({ news: res.data });
     });
   }
