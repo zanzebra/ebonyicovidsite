@@ -41,7 +41,7 @@ class ChartComponent extends React.Component {
     if (this.props.slugValue === "") {
       axios
         .get(
-          `https://ebonyicovidsite.ew.r.appspot.com/${this.props.region}/month/january-2020`
+          `https://ebonyicovidsite.ew.r.appspot.com/${this.props.region}/month/febuary-2020`
         )
         .then((res) => {
           this.setState({ data: res.data });
