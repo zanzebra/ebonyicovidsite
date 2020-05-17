@@ -38,7 +38,7 @@ class AdminChartComponent extends React.Component {
     if (this.props.slugValue === "") {
       axios
         .get(
-          `https://ebonyicovidsite.ew.r.appspot.com/${this.props.region}/month/febuary-2020`
+          `https://ebonyicovidsite.ew.r.appspot.com/${this.props.region}/month/may-2020`
         )
         .then((res) => {
           this.setState({ data: res.data });
@@ -116,7 +116,7 @@ class AdminChartComponent extends React.Component {
         label: "Confirmed Cases",
         data: this.state.confirmed_cases,
         borderColor: "yellow",
-        backgroundColor: "rgb(255, 79, 116)",
+        backgroundColor: "yellow",
         borderWidth: 2,
         pointBorderColor: false,
         fill: false,
@@ -126,7 +126,7 @@ class AdminChartComponent extends React.Component {
         label: "Recoveries",
         data: this.state.recoveries,
         borderColor: "green",
-        backgroundColor: "rgb(255, 99, 132)",
+        backgroundColor: "green",
         borderWidth: 2,
         pointBorderColor: false,
         fill: false,
@@ -136,7 +136,7 @@ class AdminChartComponent extends React.Component {
         label: "Deaths",
         data: this.state.deaths,
         borderColor: "red",
-        backgroundColor: "rgb(255, 99, 132)",
+        backgroundColor: "red",
         borderWidth: 2,
         pointBorderColor: false,
         fill: false,
